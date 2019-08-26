@@ -1,8 +1,6 @@
 import json
 import requests
 
-newpath = '/newfile.txt'
-newfile = open(newpath, 'w')
 ip_ranges = requests.get('https://ip-ranges.amazonaws.com/ip-ranges.json').json()['prefixes']
 connect_ranges = [] #get ready to build a big list
 
@@ -20,4 +18,4 @@ for ip in cloudfront_ips:
     connect_ranges.append(ip)
 
 print(connect_ranges)
-newfile.write(connect_ips)
+
